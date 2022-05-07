@@ -9,3 +9,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model Commander {
+  id Int @id @default(autoincrement())
+  name String @unique
+  lang String @default("en")
+  missionCommander String @db.VarChar(255)
+  enrollments String @db.VarChar(255)
+  ashCertification Boolean @default(false)
+
+}
